@@ -24,7 +24,7 @@ public class PostController {
     }
 
     @GetMapping("/post")
-    public List<Post> getPost(HttpServletRequest request){
+    public List<PostResponseDto> getPost(HttpServletRequest request){
         return postService.getPost(request);
     }
 
@@ -34,7 +34,7 @@ public class PostController {
     }
 
     @DeleteMapping("/post/{id}")
-    public PostDeleteResponseDto deletePost(@PathVariable Long id, HttpServletRequest request){
+    public PostResponseDto deletePost(@PathVariable Long id, HttpServletRequest request){
         return postService.deletePost(id, request);
     }
 }
